@@ -13,7 +13,7 @@ Features / Domain Modeling
 8) Publish
 9) Payment with packages
 10) Better Error Messages.
-
+11) seo and Friendly id
 
 
 
