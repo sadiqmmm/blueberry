@@ -1,8 +1,8 @@
 == README
 Blue Berry is a Blog Application.
 
-Features / Domain Modeling
----------------------------
+Features / Domain Modeling for versions 1.0
+-------------------------------------------
 1) User
 2) Profile
 3) Article
@@ -13,9 +13,19 @@ Features / Domain Modeling
 8) Publish
 9) Payment with packages
 10) Better Error Messages.
-11) seo and Friendly id
+11) Seo and Friendly id
 
 
 
-
-
+Features for version 2.0
+--------------------------
+1) Google charts
+2) Subdomains
+3) Captcha
+4) Active admin
+5) Syntax Highlighter
+6) BC style Text Editor
+7) Activity Feed
+8) Calender
+9) Geocoding & Maps
+10) Events
