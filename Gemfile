@@ -44,4 +44,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'gritter', '~> 1.1.0' # Growl-like notifications 
 gem 'kaminari', '~> 0.15.1'
 gem 'cancancan', '~> 1.7.1'
-gem 'meta-tags', '~> 2.0.0' # for seo
+gem 'meta-tags', '~> 2.0.0' # For seo
+gem 'friendly_id', '~> 5.0.3' # Pretty URLs
+gem 'turnout', '~> 0.3.0' # Maintanance mode
+gem 'jquery-turbolinks', '~> 2.0.2'
+gem 'bootstrap-wysihtml5-rails', '~> 0.3.1.24' # https://rubygems.org/gems/bootstrap-wysihtml5-rails
