@@ -29,3 +29,5 @@ Features for version 2.0
 8) Calender
 9) Geocoding & Maps
 10) Events
+
+Take features from http://wagtail.io/ # CMS
