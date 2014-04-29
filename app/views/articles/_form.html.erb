@@ -1,23 +1,28 @@
 <%= form_for @article do |f| %>
-	<ul>
-		<% @article.errors.full_messages.each do |error| %>
-		<li><%=error %></li>
-	<% end %>	
-	</ul>	
 	
-	<div class="form-field">
+	<% if @article.errors.present? %>
+		<ul>
+			<div class="alert alert-warning alert-dismissable">
+			  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>  
+			  <% @article.errors.full_messages.each do |error| %>		             
+	            <li><%=error %></li>           
+		      <% end %>	
+		    </div>   
+		</ul>	
+	<% end %>
+
+	<div class="form-group">
 	  <%= f.label :title %><br />
-	  <%= f.text_field :title %>	
+	  <%= f.text_field :title, class: "form-control", autofocus: true %>
 	</div>
 
-	<div class="form-field">
+	<div class="form-group">
 		<%= f.label :body %><br />
-		<%= f.text_area :body %>
+		<%= f.text_area :body, class: "form-control", rows:10 , cols: 10 %>
 	</div>
-	<div class="form-action">
-		<%= f.submit %>
-	</div>	
+	
+	<%= f.submit class: "btn btn-default" %>	
 
 <% end %>
 <br />
-<%= link_to "<<Back", articles_path %>
+<%= link_to "<<Back", articles_path, class:" label label-info" %>

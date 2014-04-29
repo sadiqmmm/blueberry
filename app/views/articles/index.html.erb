@@ -1,7 +1,31 @@
-<h1>All Articles</h1>
+<%= link_to "Add a New Article", new_article_path, class: "btn btn-success" %>
+<hr />
+<div class="articles">
+	<% @articles.each do |article| %>
+      <div class="row">
+        <div class="col-lg-8">
+     
+        <!-- the actual blog post: title/author/date/content -->
+        <h1><%= link_to article.title, article_path(article) %></h1>
 
-<%= link_to "Add a New Article", new_article_path %>
+        <p class="lead">by <%= link_to "Mohammed Sadiq", articles_path %>
+        </p>
+        
+        <hr>
+        
+        <p>
+            <span class="glyphicon glyphicon-time"></span> Posted on <%= article.updated_at.strftime("%d %b %Y %I:%M %p")  %></p>
+        <hr>
+        <img src="http://placehold.it/900x300" class="img-responsive">
+        <hr>
+        
+        <p>
+          <%= truncate article.body, length: 150 %></p>
+          <p><%= link_to "Read More", article_path(article), class: "btn btn-primary" %>       </p>	
 
-<% @articles.each do |article| %>
-	<p><%= link_to article.title, article_path(article) %></p>
-<% end %>
+        <hr>
+        </div>
+      </div>
+    <% end %>	
+</div>
+
