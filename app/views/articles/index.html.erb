@@ -16,7 +16,8 @@
         <p>
             <span class="glyphicon glyphicon-time"></span> Posted on <%= article.updated_at.strftime("%d %b %Y at %I:%M %p")  %></p>
         <hr>
-        <img src="http://placehold.it/900x300" class="img-responsive">
+        
+        <%= image_tag article.image.thumb('900x300#').url, class: "img-responsive" if article.image_stored? %>
         <hr>
         
         <p>

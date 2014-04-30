@@ -18,11 +18,15 @@
 
 	<div class="form-group">
 		<%= f.label :body %><br />
-		<%= f.text_area :body, class: "form-control wysihtml5", rows:10 , cols: 10 %>
+		<%= f.text_area :body, class: "form-control wysihtml5", rows:10, cols: 10 %>
 	</div>
 	
+	<div class="form-group">
+		<%= f.file_field :image %>
+	</div>
+	  
 	<%= f.submit class: "btn btn-default" %>	
 
 <% end %>
 <br />
-<%= link_to "<<Back", articles_path, class:" label label-info" %>
+<%= link_to "<<Back", articles_path, class: "label label-info" %>
