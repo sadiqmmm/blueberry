@@ -2,13 +2,13 @@ class ArticlesController < ApplicationController
 	before_action :set_article, only: [:edit, :update, :destroy]
 
 	def index
-		@articles = Article.order(title: :desc)
+		@articles = Article.order(updated_at: :desc)
 	end
 
 	def show
 		
 		begin	  	
-	  	@article = Article.find(params[:id])
+	  	@article = Article.friendly.find(params[:id])
 
 	  	rescue ActiveRecord::RecordNotFound
 	  		flash[:notice] = "No Article found with the Id #{params[:id]}"
@@ -53,10 +53,10 @@ class ArticlesController < ApplicationController
 	private
 
 	  def article_params
-	  	params.require(:article).permit(:title, :body, :image)
+	  	params.require(:article).permit(:title, :body, :slug, :image)
 	  end
 
 	  def set_article
-	  	@article = Article.find(params[:id])
+	  	@article = Article.friendly.find(params[:id])
 	  end
 end

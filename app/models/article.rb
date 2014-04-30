@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
-  
+  include FriendlyId
+  friendly_id :title, use: :slugged
+
   dragonfly_accessor :image 
 
   belongs_to :user
