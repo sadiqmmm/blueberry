@@ -11,7 +11,21 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap-wysihtml5/b3
 //= require_tree .
+
+  // wysihtml5 class element of the page
+ $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  });
+
+
+

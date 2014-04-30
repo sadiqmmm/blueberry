@@ -11,5 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
+ *= require bootstrap-wysihtml5/b3
+ *= require_self 
+
  */

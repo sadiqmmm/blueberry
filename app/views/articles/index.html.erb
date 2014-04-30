@@ -14,18 +14,23 @@
         <hr>
         
         <p>
-            <span class="glyphicon glyphicon-time"></span> Posted on <%= article.updated_at.strftime("%d %b %Y %I:%M %p")  %></p>
+            <span class="glyphicon glyphicon-time"></span> Posted on <%= article.updated_at.strftime("%d %b %Y at %I:%M %p")  %></p>
         <hr>
         <img src="http://placehold.it/900x300" class="img-responsive">
         <hr>
         
         <p>
-          <%= truncate article.body, length: 150 %></p>
-          <p><%= link_to "Read More", article_path(article), class: "btn btn-primary" %>       </p>	
+          <%= truncate((sanitize article.body, tags: %w(a)), length: 150)%>
+        </p>
+          
+          <p><%= link_to "Read More", article_path(article), class: "btn btn-primary" %> </p>	
 
         <hr>
         </div>
       </div>
     <% end %>	
 </div>
+
+
+
 

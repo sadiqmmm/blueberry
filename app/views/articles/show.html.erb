@@ -12,12 +12,12 @@
         <hr>
         
         <p>
-            <span class="glyphicon glyphicon-time"></span> Posted on <%= @article.updated_at.strftime("%d %b %Y %I:%M %p") %></p>
+            <span class="glyphicon glyphicon-time"></span> Posted on <%= @article.updated_at.strftime("%d %b %Y at %I:%M %p") %></p>
         <hr>
         <img src="http://placehold.it/900x300" class="img-responsive">
         <hr>
         
-        <p><%= @article.body %></p>	
+        <p><%= @article.body.html_safe %></p>	
 
         <hr>
 
