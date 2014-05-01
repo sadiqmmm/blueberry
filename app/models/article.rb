@@ -10,6 +10,6 @@ class Article < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true, length: { maximum: 255 }
   validates :body, length: { minimum: 3 }
 end
