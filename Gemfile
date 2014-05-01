@@ -41,7 +41,6 @@ gem 'puma', '~> 2.8.2'
 gem 'devise', '~> 3.2.4'
 gem 'dragonfly', '~> 1.0.4'
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'gritter', '~> 1.1.0' # Growl-like notifications 
 gem 'kaminari', '~> 0.15.1'
 gem 'cancancan', '~> 1.7.1'
 gem 'meta-tags', '~> 2.0.0' # For seo
