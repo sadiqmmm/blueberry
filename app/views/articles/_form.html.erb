@@ -23,15 +23,24 @@
    
 	 <% if @article.image_stored? %>
 	    <div class="form-group">
+	    <p>Attached Image:</p>
            <%= image_tag (@article.image.thumb('300x300#').url), class: "img-responsive" %>
+        </div>
+    <% elsif @article.new_record? %>
+    	  
+    <% else %>
+        <div class="form-group">
+           <u>No Image Attached</u>
+           <%= image_tag 'http://placehold.it/200x200', class: "img-responsive" %>
         </div>   
-        <% end %>
+    <% end %>
         
 	<div class="form-group">
+	    <%= f.label :image %><br />
 		<%= f.file_field :image %>
 	</div>
 	  
-	<%= f.submit class: "btn btn-default" %>	
+	<%= f.submit class: "btn btn-success" %>	
 
 <% end %>
 <br />
