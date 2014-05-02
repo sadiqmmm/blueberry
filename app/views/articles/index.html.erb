@@ -1,6 +1,8 @@
 <%= link_to "Add a New Article", new_article_path, class: "btn btn-success" %>
 <hr />
 <div class="articles">
+  <%= paginate @articles %>
+  
 	<% @articles.each do |article| %>
       <div class="row">
         <div class="col-lg-8">
