@@ -6,7 +6,7 @@
         <!-- the actual blog post: title/author/date/content -->
         <h1><%= @article.title %></h1>
 
-      <p class="lead">by <%= link_to "Mohammed Sadiq", articles_path %> (<%= link_to "Edit", edit_article_path(@article) %> | <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure!"} %>)
+      <p class="lead">by <%= link_to @article.user.name, articles_path %> (<%= link_to "Edit", edit_article_path(@article) %> | <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure!"} %>)
         </p>
         
         <hr>

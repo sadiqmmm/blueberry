@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 	before_action :set_article, only: [:edit, :update, :destroy]
+	before_action :authenticate_user_with_msg, except: [:index, :show]
+
 
 	def index
 		@articles = Article.order(updated_at: :desc).page(params[:page]).per(2)		
@@ -22,6 +24,7 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
+		@article.user_id = current_user.id
 		if @article.save
 			flash[:notice] = "Created - #{@article.title} !"
 			redirect_to @article
@@ -59,4 +62,14 @@ class ArticlesController < ApplicationController
 	  def set_article
 	  	@article = Article.friendly.find(params[:id])
 	  end
+
+	  def authenticate_user_with_msg
+		if signed_in?			
+			
+		else
+			flash[:notice] = "Please Login"
+		end
+		authenticate_user!
+	end
+
 end
