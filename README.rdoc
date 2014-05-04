@@ -31,3 +31,12 @@ Features for version 2.0
 10) Events
 
 Take features from wagtail CMS - > http://wagtail.io/ # CMS
+
+
+Turn out
+----------
+rake maintenance:start reason="Somebody googled Google!" # Show this message.
+
+rake maintenance:start allowed_ips="4.8.15.16" # Only allow this ip to access in dev mode # ip 127.0.0.1 will work
+
+rake maintenance:end # TO end the maintainance mode
