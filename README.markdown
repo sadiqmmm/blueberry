@@ -35,8 +35,8 @@ Take features from wagtail CMS - > http://wagtail.io/ # CMS
 
 Turn out:
 ---------
-1. rake maintenance:start reason="Somebody googled Google!" # Show this message.
+1. **rake maintenance:start reason="Somebody googled Google!"** *# Show this message.*
 
-2. rake maintenance:start allowed_ips="4.8.15.16" # Only allow this ip to access in dev mode # ip 127.0.0.1 will work
+2. **rake maintenance:start allowed_ips="4.8.15.16"** *# Only allow this ip to access in dev mode # ip 127.0.0.1 will work*
 
-3. rake maintenance:end # TO end the maintainance mode
+3. **rake maintenance:end** *# TO end the maintainance mode.*
