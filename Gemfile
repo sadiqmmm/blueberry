@@ -45,6 +45,7 @@ group :production do
 	gem 'pg'
 end
 
+gem 'chartkick', '~> 1.2.4' # for better charts in one line of ruby
 gem 'puma', '~> 2.8.2'
 gem 'devise', '~> 3.2.4'
 gem 'dragonfly', '~> 1.0.4'
