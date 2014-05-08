@@ -37,7 +37,6 @@ GEM
     bootstrap-wysihtml5-rails (0.3.1.24)
       railties (>= 3.0)
     builder (3.2.2)
-    cancancan (1.7.1)
     chartkick (1.2.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -94,6 +93,8 @@ GEM
     polyglot (0.3.4)
     puma (2.8.2)
       rack (>= 1.1, < 2.0)
+    pundit (0.2.3)
+      activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -156,7 +157,6 @@ DEPENDENCIES
   better_errors
   bootstrap-sass (~> 3.1.1)
   bootstrap-wysihtml5-rails (~> 0.3.1.24)
-  cancancan (~> 1.7.1)
   chartkick (~> 1.2.4)
   coffee-rails (~> 4.0.0)
   devise (~> 3.2.4)
@@ -169,6 +169,7 @@ DEPENDENCIES
   meta-tags (~> 2.0.0)
   pg
   puma (~> 2.8.2)
+  pundit (~> 0.2.3)
   rails (= 4.1.1)
   sass-rails (~> 4.0.3)
   spring
