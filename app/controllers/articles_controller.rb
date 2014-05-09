@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 	def show
 		
 		begin	  	
-	  
+	    @article = Article.friendly.find(params[:id])
 	  	authorize! :read, @article
 
 	  	rescue ActiveRecord::RecordNotFound

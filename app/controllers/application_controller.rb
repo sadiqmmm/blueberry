@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, notice: "You are not authorized to access"
   end
 
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+
+    redirect_to root_url, notice: "No Article found '#{params[:id]}'"
+  end
+
   # Sanitize more custom params for Devise
   before_action :configure_permitted_parameters, if: :devise_controller?
 
