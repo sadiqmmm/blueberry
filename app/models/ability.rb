@@ -9,7 +9,7 @@ class Ability
           can :manage, :all
        else
           can [:index], :all  
-          #can [:index, :show, :edit, :update, :destroy, :create], :all  # working...
+          #can [:index, :show, :new, :create, :edit, :update, :destroy], :all  # working...
        end
     #
     # The first argument to `can` is the action you are giving the user
