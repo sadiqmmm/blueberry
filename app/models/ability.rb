@@ -8,7 +8,8 @@ class Ability
        if user.admin?
           can :manage, :all
        else
-          can :index, :all
+          can [:index], :all  
+          #can [:index, :show, :edit, :update, :destroy, :create], :all  # working...
        end
     #
     # The first argument to `can` is the action you are giving the user

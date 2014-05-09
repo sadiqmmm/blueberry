@@ -6,15 +6,13 @@ class ArticlesController < ApplicationController
     load_and_authorize_resource :find_by => :slug
 
 	def index
-		@articles = Article.order(updated_at: :desc).page(params[:page]).per(2)		
-		authorize! :index, @article
+		@articles = Article.order(updated_at: :desc).page(params[:page]).per(2)				
 	end
 
 	def show
 		
 		begin	  	
-	    @article = Article.friendly.find(params[:id])
-	  	authorize! :read, @article
+	    @article = Article.friendly.find(params[:id])	   
 
 	  	rescue ActiveRecord::RecordNotFound
 	  		flash[:notice] = "No Article found '#{params[:id]}'"
@@ -24,12 +22,11 @@ class ArticlesController < ApplicationController
 
 	def new
 		@article = Article.new
-	    authorize! :new, @article	
+	  
 	end
 
 	def create
-		@article = Article.new(article_params)
-		authorize! :create, @article
+		@article = Article.new(article_params)		 
 
 		@article.user_id = current_user.id
 		if @article.save
@@ -40,13 +37,11 @@ class ArticlesController < ApplicationController
 		end
 	end
 
-	def edit
-		 authorize! :edit, @article
+	def edit 
 	end
 
 	def update
 		if @article.update(article_params)
-		authorize! :update, @article
 			flash[:notice] = "Updated - #{@article.title}"
 			redirect_to article_path(@article)
 		else
@@ -56,7 +51,7 @@ class ArticlesController < ApplicationController
 
 	def destroy
 	 
-    	authorize! :destroy, @article.destroy
+    	@article.destroy
 		redirect_to articles_path				
 	end
 
