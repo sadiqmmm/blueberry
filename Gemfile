@@ -24,7 +24,8 @@ gem 'devise', '~> 3.2.4'
 gem 'dragonfly', '~> 1.0.4'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'kaminari-bootstrap', '~> 3.0.1'
-gem 'pundit', '~> 0.2.3'
+#gem 'pundit', '~> 0.2.3'
+gem 'cancancan', '~> 1.8.0'
 gem 'meta-tags', '~> 2.0.0' # For seo
 gem 'friendly_id', '~> 5.0.3' # Pretty URLs
 gem 'turnout', '~> 0.3.0' # Maintanance mode
