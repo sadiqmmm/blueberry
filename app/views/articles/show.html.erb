@@ -38,13 +38,13 @@
         <!-- the comments -->
         <% @article.comments.reverse_each do |c| %>
           <div class="well">
-              <h3><%= c.author_name %>
-                <small><%= time_ago_in_words(c.created_at) %> ago. </small>
-              </h3>
+            <h3><%= c.author_name %>
+              <small><%= time_ago_in_words(c.created_at) %> ago. </small>
+            </h3>
+            <p>
+              <%= c.body %>
+            </p>
               
-              <p>
-                <%= c.body %>
-              </p>
           </div>
         <% end %>        
     </div>
