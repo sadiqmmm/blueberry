@@ -12,6 +12,7 @@ group :development do
   gem "better_errors"
   gem 'spring'
   gem 'sqlite3'
+  gem 'rails-erd'
 end
 
 group :production do 
