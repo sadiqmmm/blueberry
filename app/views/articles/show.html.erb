@@ -39,7 +39,7 @@
         <% @article.comments.reverse_each do |c| %>
           <div class="well">
               <h3><%= c.author_name %>
-                <small><%= time_ago_in_words(c.updated_at) %> ago. </small>
+                <small><%= time_ago_in_words(c.created_at) %> ago. </small>
               </h3>
               
               <p>
