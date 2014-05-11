@@ -39,18 +39,19 @@
         </div>
 
         <hr>
-
+        <p><h2><u>Comments:</u></h2></p>
         <!-- the comments -->
-        <h3>Start Bootstrap
-            <small>9:41 PM on August 24, 2013</small>
-        </h3>
-        <p>This has to be the worst blog post I have ever read. It simply makes no sense. You start off by talking about space or something, then you randomly start babbling about cupcakes, and you end off with random fish names.</p>
-
-        <h3>Start Bootstrap
-            <small>9:47 PM on August 24, 2013</small>
-        </h3>
-        <p>Don't listen to this guy, any blog with the categories 'dinosaurs, spaceships, fried foods, wild animals, alien abductions, business casual, robots, and fireworks' has true potential.</p>
-
+        <% @article.comments.each do |c| %>
+          <div class="well">
+              <h3><%= c.author_name %>
+                <small><%= c.updated_at.strftime("%d %b %Y at %I:%M %p")  %></small>
+              </h3>
+              
+              <p>
+                <%= c.body %>
+              </p>
+          </div>
+        <% end %>        
     </div>
 
     <div class="col-lg-4">
