@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
   dragonfly_accessor :image 
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   
   has_many :taggings
   has_many :tags, through: :taggings

@@ -30,21 +30,16 @@
         <!-- the comment box -->
         <div class="well">
             <h4>Leave a Comment:</h4>
-            <form role="form">
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            <%= render partial: 'comments/form' %>           
         </div>
 
         <hr>
-        <p><h2><u>Comments:</u></h2></p>
+        <h3>Comments (<%= @article.comments.size %>)</h3>
         <!-- the comments -->
-        <% @article.comments.each do |c| %>
+        <% @article.comments.reverse_each do |c| %>
           <div class="well">
               <h3><%= c.author_name %>
-                <small><%= c.updated_at.strftime("%d %b %Y at %I:%M %p")  %></small>
+                <small><%= time_ago_in_words(c.updated_at) %> ago. </small>
               </h3>
               
               <p>

@@ -10,10 +10,12 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		
+
 		begin	  	
 	    @article = Article.friendly.find(params[:id])	   
 
+	    @comment = Comment.new
+	    
 	  	rescue ActiveRecord::RecordNotFound
 	  		flash[:notice] = "No Article found '#{params[:id]}'"
 	      redirect_to articles_path

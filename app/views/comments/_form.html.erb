@@ -1,0 +1,20 @@
+<%= form_for [@article, @comment] do |f| %>
+	
+	<% if @comment.errors.present? %>
+		<ul>
+			<div class="alert alert-warning alert-dismissable">
+			  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>  
+			  <% @comment.errors.full_messages.each do |error| %>		             
+	            <li><%=error %></li>           
+		      <% end %>	
+		    </div>   
+		</ul>	
+	<% end %>
+
+	<div class="form-group">
+	  
+	  <%= f.text_area :body, class: "form-control" %>
+	 </div>
+	  <%= f.submit class: "btn btn-success" %>	
+	
+<% end %>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     get 'page/:page', :action => :index, :on => :collection
+    resources :comments
   end
 
   root to: "articles#index"
