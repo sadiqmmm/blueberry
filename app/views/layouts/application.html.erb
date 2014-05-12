@@ -23,6 +23,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <% if user_signed_in? %>
+                    <li>
+                      <%= link_to current_user.name.capitalize  + " - ("+ current_user.role.capitalize + ")" %> 
+                    </li>
+
                     <li>                    
                       <%= link_to "Edit User", edit_user_registration_path %>
                     </li>
