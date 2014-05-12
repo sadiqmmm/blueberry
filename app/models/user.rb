@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :comments
 	
   # Roles
-  enum role: [:user, :admin]
+  enum role: [:user, :moderator, :admin]
 
   after_initialize :set_default_role, :if => :new_record?
 
