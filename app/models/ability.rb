@@ -5,12 +5,22 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
        user ||= User.new # guest user (not logged in)
+       
        if user.admin?
           can :manage, :all
-       else
-          can [:index], :all  
+       
+       elsif user.authenticated? # Authenticad users can index and show articles and can comment an artilcle
+          can :read, Article
+          can [:read, :create], Comment          
+
+       else # Guest / Visitor can only read Articles and there comments
+          can :read, Article
+          can :read, Comment
           #can [:index, :show, :new, :create, :edit, :update, :destroy], :all  # working...
        end
+       
+
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
   has_many :comments
 	
   # Roles
-  enum role: [:user, :moderator, :admin]
+  enum role: [:authenticated, :moderator, :admin]
 
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
-    self.role ||= :user
+    self.role ||= :authenticated
   end
 end

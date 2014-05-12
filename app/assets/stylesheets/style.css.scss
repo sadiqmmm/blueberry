@@ -1,4 +1,9 @@
 @import 'bootstrap';
+
 body {
 	padding-top: 70px;
+}
+
+textarea {
+	max-width: 100%;
 }
