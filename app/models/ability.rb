@@ -9,15 +9,18 @@ class Ability
        if user.admin?
           can :manage, :all
        
-       elsif user.authenticated? # Authenticad users can index and show articles and can comment an artilcle
-          can :read, Article
-          can [:read, :create], Comment          
-
        else # Guest / Visitor can only read Articles and there comments
           can :read, Article
           can :read, Comment
+          can :create, Comment
           #can [:index, :show, :new, :create, :edit, :update, :destroy], :all  # working...
        end
+
+       if user.authenticated? # Authenticad users can index and show articles and can comment an artilcle
+          can :read, Article
+          can :read, Comment
+          can :create, Comment
+        end
        
 
 
