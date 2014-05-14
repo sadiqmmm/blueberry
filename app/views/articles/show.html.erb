@@ -44,13 +44,16 @@
         <hr>
         <h3>Comments (<%= @article.comments.size %>)</h3>
         <!-- the comments -->
-        <% @article.comments.reverse_each do |c| %>
+        <% @article.comments.reverse_each do |comment| %>
           <div class="well">
-            <h3><%= c.author_name %>
-              <small><%= time_ago_in_words(c.created_at) %> ago. </small>
+            
+            <%= link_to "Edit", edit_article_comment_path(@article, comment), class: "edit-comment" %>
+
+            <h3><%= comment.author_name %>
+              <small><%= time_ago_in_words(comment.created_at) %> ago. </small>
             </h3>
             <p>
-              <%= c.body %>
+              <%= comment.body %>
             </p>
               
           </div>

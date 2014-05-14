@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 group :development do
-  gem "better_errors"
+  #gem "better_errors"
   gem 'spring'
   gem 'sqlite3'
   gem 'rails-erd'

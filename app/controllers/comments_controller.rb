@@ -15,6 +15,12 @@ class CommentsController < ApplicationController
 
 		redirect_to article_path(@comment.article)
 	end
+
+	def edit
+	end
+
+	def update
+	end	
 	
 	private
 

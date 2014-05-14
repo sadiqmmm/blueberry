@@ -4,23 +4,31 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
-       user ||= User.new # guest user (not logged in)
+      user ||= User.new # guest user (not logged in)
        
-       if user.admin?
-          can :manage, :all
+      if user.admin?
+        can :manage, :all
        
-       else # Guest / Visitor can only read Articles and there comments
-          can :read, Article
-          can :read, Comment
-          can :create, Comment
-          #can [:index, :show, :new, :create, :edit, :update, :destroy], :all  # working...
+      else # Guest / Visitor can only read Articles and there comments
+        can :read, Article
+        can :read, Comment
+        can :create, Comment
+        #can [:index, :show, :new, :create, :edit, :update, :destroy], :all  # working...
        end
 
-       if user.authenticated? # Authenticad users can index and show articles and can comment an artilcle
-          can :read, Article
-          can :read, Comment
-          can :create, Comment
+      if user.authenticated? # Authenticad users can index and show articles and can comment an artilcle
+        can :read, Article
+        can :read, Comment
+        can :create, Comment
+      end
+
+      if user.moderator?
+        can :read, Article
+        can :read, Comment
+        can :update, Comment do |comment|
+          comment && comment.user == user || user.moderator?
         end
+      end
        
 
 
