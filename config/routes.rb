@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'page/:page', :action => :index, :on => :collection
     resources :comments
   end
+  resources :profiles
 
   root to: "articles#index"
   # The priority is based upon order of creation: first created -> highest priority.
