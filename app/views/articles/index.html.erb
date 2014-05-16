@@ -13,7 +13,7 @@
         <!-- the actual blog post: title/author/date/content -->
         <h1><%= link_to article.title, article_path(article) %></h1>
 
-        <p class="lead">by <%= link_to article.user.name, profile_path(current_user) %>
+        <p class="lead">by <%= link_to article.user.name, profile_path(article.user) %>
         </p>
         
         <hr>
